@@ -6,6 +6,7 @@ use App\Models\Post;
 use Illuminate\Http\Request;
 use App\Http\Requests\PostStoreRequest;
 use App\Http\Requests\PostUpdateRequest;
+use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
 {
@@ -23,6 +24,23 @@ class PostController extends Controller
         ->get();
 
         return view('posts.index', ['posts'=>$posts]);
+    }
+
+    public function search(Request $request){
+        // Get the search value from the request
+        $search = $request->input('search');
+
+        // Search in the title and body columns from the posts table
+        $posts = Post::query()
+            ->where('data', '>=', "{$search}")
+            ->where('data', '<=', "{$search}")
+            ->orderByDesc('data')
+            ->orderByDesc('ora_e')
+            ->orderByRaw("IFNULL( `ora_u`, '23:59' ) DESC")
+            ->get();
+
+        // Return the search view with the resluts compacted
+        return view('search', compact('posts'));
     }
 
     /*
