@@ -29,7 +29,7 @@ Route::get('/',[WelcomeController::class, 'index'])->name('home');
 Route::get('/dashboard',[DashController::class, 'index'])->name('dashboard');
 Route::resource('/posts',PostController::class)->middleware(['auth', 'verified']);
 
-Route::get('/search/', [PostController::class, 'search'])->name('search');
+Route::get('/search/', [PostController::class, 'search'])->middleware(['auth', 'verified'])->name('search');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
