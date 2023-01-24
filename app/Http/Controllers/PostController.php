@@ -28,12 +28,13 @@ class PostController extends Controller
 
     public function search(Request $request){
         // Get the search value from the request
-        $search = $request->input('search');
+        $start = $request->input('start');
+        $stop = $request->input('stop');
 
         // Search in the title and body columns from the posts table
         $posts = Post::query()
-            ->where('data', '>=', "{$search}")
-            ->where('data', '<=', "{$search}")
+            ->where('data', '>=', "{$start}")
+            ->where('data', '<=', "{$stop}")
             ->orderByDesc('data')
             ->orderByDesc('ora_e')
             ->orderByRaw("IFNULL( `ora_u`, '23:59' ) DESC")
