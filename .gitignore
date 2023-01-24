@@ -1,0 +1,12 @@
+/node_modules
+/storage/*.key
+/vendor
+artisan
+Homestead.json
+Homestead.yaml
+auth.json
+npm-debug.log
+yarn-error.log
+/.fleet
+/.idea
+/.vscode
