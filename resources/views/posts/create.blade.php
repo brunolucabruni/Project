@@ -7,7 +7,7 @@
                 </h2>
             </div>
             <div class="col-4 col-md-6 col-lg-6 text-right">
-                <a class="btn btn-secondary" href="{{route('search')}}">Indietro</a>
+                <a class="btn btn-secondary" href="@auth{{route('search')}}@else{{route('dashboard')}}@endauth">Indietro</a>
             </div>
         </div>
     </x-slot>
@@ -50,14 +50,12 @@
                     <input type="time" id="ora_e" name="ora_e" class="form-control dark:bg-gray-700 dark:text-gray-100" value="{{old('ora_e', Carbon\Carbon::now()->format('H:i'))}}" required="true">
                 </div>
             </div>
-            <!--
             <div class="col-6 col-md-4 col-lg-4">
                 <div class="form-group">
                     <label for="exampleInputEmail1">Ora uscita</label>
-                    <input type="time" id="ora_u" name="ora_u" class="form-control" value="{{old('data', Carbon\Carbon::now()->format('H:i'))}}">
+                    <input type="time" id="ora_u" name="ora_u" class="form-control dark:bg-gray-700 dark:text-gray-100" value="{{old('ora_u', Carbon\Carbon::now()->addHour()->format('H:i'))}}">
                 </div>
             </div>
-            -->
        </div>
         <button class="btn btn-primary">Crea</button>
       </form>

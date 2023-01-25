@@ -7,7 +7,7 @@
                 </h2>
             </div>
             <div class="col-4 col-md-6 col-lg-6 text-right">
-                <a class="btn btn-secondary" href="{{route('search')}}">Indietro</a>
+                <a class="btn btn-secondary" href="@auth{{route('search')}}@else{{route('dashboard')}}@endauth">Indietro</a>
             </div>
         </div>
     </x-slot>

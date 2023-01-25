@@ -1,25 +1,3 @@
-<style>
-
-@media (prefers-color-scheme: dark){
-    .dark:bg-gray-800 {
-        --tw-bg-opacity: 1;
-        background-color: rgb(31 41 55 / var(--tw-bg-opacity)) !important;
-    }
-
-    .dark:bg-gray-900 {
-        --tw-bg-opacity: 1;
-        background-color: rgb(17 24 39 / var(--tw-bg-opacity));
-        color:white !important;
-    }
-
-    .dark:bg-gray-700 {
-        --tw-bg-opacity: 1;
-        background-color: rgb(55 65 81 / var(--tw-bg-opacity))!important;
-    }
-}
-</style>
-
-
 <nav x-data="{ open: false }" class="bg-gray-100 dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -43,6 +21,7 @@
                 </div>
             </div>
 
+            @auth
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ml-6">
                 <x-dropdown align="right" width="48">
@@ -76,6 +55,12 @@
                     </x-slot>
                 </x-dropdown>
             </div>
+            @else
+
+            <div class="top-0 right-0 px-6 py-4 sm:block">
+                    <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
+            </div>
+            @endauth
 
             <!-- Hamburger -->
             <div class="-mr-2 flex items-center sm:hidden">
@@ -100,6 +85,8 @@
             </x-responsive-nav-link>
         </div>
 
+
+        @auth
         <!-- Responsive Settings Options -->
         <div class="pt-4 pb-1 border-t border-gray-200 dark:border-gray-600">
             <div class="px-4">
@@ -124,5 +111,12 @@
                 </form>
             </div>
         </div>
+
+        @else
+
+        <div class="flex top-0 right-0 px-6 py-4 sm:block">
+                <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
+        </div>
+        @endauth
     </div>
 </nav>

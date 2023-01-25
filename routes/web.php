@@ -25,9 +25,8 @@ Route::get('/dashboard', function () {
     return view('welcome');
 })->name('dashboard');
 */
-Route::get('/',[WelcomeController::class, 'index'])->name('home');
-Route::get('/dashboard',[DashController::class, 'index'])->name('dashboard');
-Route::resource('/posts',PostController::class)->middleware(['auth', 'verified']);
+Route::get('/',[DashController::class, 'index'])->name('dashboard');
+Route::resource('/posts',PostController::class);
 
 Route::get('/search/', [PostController::class, 'search'])->middleware(['auth', 'verified'])->name('search');
 

@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests\PostStoreRequest;
 use App\Http\Requests\PostUpdateRequest;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+
 
 class PostController extends Controller
 {
@@ -32,6 +34,7 @@ class PostController extends Controller
         $stop = $request->input('stop');
 
         // Search in the title and body columns from the posts table
+        /*
         $posts = Post::query()
             ->where('data', '>=', "{$start}")
             ->where('data', '<=', "{$stop}")
@@ -39,7 +42,17 @@ class PostController extends Controller
             ->orderByDesc('ora_e')
             ->orderByRaw("IFNULL( `ora_u`, '23:59' ) DESC")
             ->get();
+        */
 
+        $posts = DB::table('posts')
+        ->selectRaw("id,DATE_FORMAT(data,'%d/%m/%Y') as data ,cognome, nome, azienda, note, SUBSTR(ora_e,1,5) as ora_e, SUBSTR(ora_u,1,5) as ora_u")
+        ->where('data', '>=', "{$start}")
+        ->where('data', '<=', "{$stop}")
+        ->orderByDesc('data')
+        ->orderByDesc('ora_e')
+        //->orderByDesc(IFNULL('ora_u','23:59'))
+        ->orderByRaw("IFNULL( `ora_u`, '23:59' ) DESC")
+        ->get();
         // Return the search view with the resluts compacted
         return view('search', compact('posts'));
     }
@@ -69,9 +82,14 @@ class PostController extends Controller
         $post->note = $request->note;
         $post->data = $request->data;
         $post->ora_e = $request->ora_e;
+        $post->ora_u = $request->ora_u;
         $post->save();
         $request->session()->flash('status','Presenza marcata correttamente');
-        return redirect('posts');
+
+        if (Auth::user()){
+            return redirect('search');
+        }
+        return redirect('/');
     }
 
     /**
@@ -107,8 +125,11 @@ class PostController extends Controller
     public function update(PostUpdateRequest $request, Post $post)
     {
         $post->update($request->validated());
-        $request->session()->flash('status','Presenza marcata correttamente');
-        return redirect('posts');
+        //$request->session()->flash('status','Presenza marcata correttamente');
+        if (Auth::user()){
+            return redirect('search');
+        }
+        return redirect('/');
     }
 
     /**
