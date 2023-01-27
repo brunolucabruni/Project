@@ -1,3 +1,5 @@
+<p align="center"><img src="Screenshots/logo.png" width="400" alt="Personal Logo"></a></p>
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
@@ -22,7 +24,27 @@ Ci sarà una schermata principale dove tutti potranno visualizzare le visite del
 un'area riservata per la segretaria dove può vedere tutte le visite, tramite un filtro per data.
 
 ## Funzionamento del servizio
+
+Dalla prima pagina, anche senza aver effettuato la login è possibile visualizzare la lista degli ingressi, e inserire un nuovo ingresso.
+
 <p align="center"><img src="Screenshots/Screen1.png" width="400" alt="Screen 1"></p>
+
+Come da richiesta sarà possibile inserire i campi Nome, Cognome, Azienda, Motivo, Data, Ora di entrata ed Ora di uscita.
+
+<p align="center"><img src="Screenshots/Screen2.png" width="400" alt="Screen 2"></p>
+
+Sarà possibile modificare o eliminare le uscite sia prima che dopo aver effettuato l'accesso.
+
+<p align="center"><img src="Screenshots/Screen3.png" width="400" alt="Screen 3"></p>
+
+Nel momento in cui si decide di visualizzare lo storico delle presenze il sistema richiederà di fare l'accesso.
+
+<p align="center"><img src="Screenshots/Screen4.png" width="400" alt="Screen 4"></p>
+
+Una volta effettuato l'accesso sarà possibile visionare lo storico degli ingressi filtrando Da data, A data. 
+
+<p align="center"><img src="Screenshots/Screen5.png" width="400" alt="Screen 5"></p>
+
 
 ### Programmi utilizzati
 
