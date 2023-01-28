@@ -13,7 +13,7 @@
                     {{ csrf_field() }}
                     {{ method_field('GET') }}
                     -->
-                    <button class="btn btn-success">Inserisci</button>
+                    <button class="btn btn-success"><i class="fas fa-calendar-plus"></i></button>
                 </form>
             </div>
         </div>

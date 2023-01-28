@@ -7,7 +7,7 @@
                 </h2>
             </div>
             <div class="col-4 col-md-6 col-lg-6 text-right">
-                <a class="btn btn-secondary" href="@auth{{route('search')}}@else{{route('dashboard')}}@endauth">Indietro</a>
+                <a class="btn btn-secondary" href="@auth{{route('search')}}@else{{route('dashboard')}}@endauth"><i class="fas fa-undo-alt"></i></a>
             </div>
         </div>
     </x-slot>
@@ -58,7 +58,15 @@
                         </div>
                     </div>
                 </div>
-                <button class="btn btn-primary">Modifica</button>
+                <div class="row">
+                    <div class="col-lg-4">
+                    </div>
+                    <div class="col-lg-4">
+                        <button style="width:100%" class="btn btn-primary">Modifica</button>
+                    </div>
+                    <div class="col-lg-4">
+                    </div>
+                </div>
             </form>
         </div>
     </div>

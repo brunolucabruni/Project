@@ -9,7 +9,7 @@
             <th scope="col">Motivo</th>
             <th scope="col">Ora [E]</th>
             <th scope="col">Ora [U]</th>
-            <th scope="col" colspan="2">&nbsp;</th>
+            <th scope="col" colspan="2" style="text-align:center;">Azioni</th>
         </tr>
         </thead>
         <tbody>
@@ -27,7 +27,7 @@
                         {{ csrf_field() }}
                         {{ method_field('DELETE') }}
 
-                        <button class="btn btn-danger">Elimina</button>
+                        <button class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
                     </form>
                 </td>
                 <td style="text-align:center">
@@ -35,7 +35,7 @@
                         {{ csrf_field() }}
                         {{ method_field('GET') }}
 
-                        <button class="btn btn-primary">Modifica</button>
+                        <button class="btn btn-primary"><i class="fas fa-edit"></i></button>
                     </form>
                 </td>
             </tr>
