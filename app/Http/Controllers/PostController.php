@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 use App\Http\Requests\PostStoreRequest;
 use App\Http\Requests\PostUpdateRequest;
+use App\Exports\ExportPost;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
@@ -17,6 +19,14 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
+    public function exportPost(Request $request){
+
+        return Excel::download(new ExportPost, 'presenze.xlsx');
+
+    }
+
     public function index()
     {
         $posts = Post::orderByDesc('data')

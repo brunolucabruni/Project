@@ -50,6 +50,7 @@ Una volta effettuato l'accesso sarà possibile visionare lo storico degli ingres
 
 - **[VS Code](https://code.visualstudio.com/Download)**
 - **[GitHub Desktop](https://desktop.github.com/)**
+- **[maatwebsite/excel](https://laravel-excel.com/)**
 
 ### Riferimenti
 
@@ -58,6 +59,8 @@ Una volta effettuato l'accesso sarà possibile visionare lo storico degli ingres
 - **[Devdojo - How to add simple search to your laravel blogwebsite](https://devdojo.com/bobbyiliev/how-to-add-simple-search-to-your-laravel-blogwebsite)**
 - **[CoderDave - Your code to GitHub in ONE Click with VisualStudioCode (VSCode Tutorial)](https://www.youtube.com/watch?v=shP-3p-2m6g)**
 - **[Html.it - database modelli factory e seed](https://www.html.it/pag/56533/database-modelli-factory-e-seed/)**
+- **[GEEKSFORGEEKS - Laravel Import Export Excel file](https://www.geeksforgeeks.org/laravel-import-export-excel-file/amp/)**
+
 
 ## License
 

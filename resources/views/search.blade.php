@@ -22,7 +22,22 @@
                     <!-- <button type="submit">Search</button> -->
                 </form>
             </div>
-            <div class="col-4 col-md-6 col-lg-6 text-right ">
+
+            <div class="col-2 col-md-3 col-lg-3 text-right ">
+                <label>&nbsp;</label>
+                <!--
+                <a class="btn btn-warning" href="{{ route('export') }}"><i class="far fa-file-excel"></i></a>
+                -->
+                <form action="{{route('export')}}" method="GET">
+                    <!--
+                    {{ csrf_field() }}
+                    {{ method_field('GET') }}
+                    -->
+                    <button class="btn btn-warning"><i class="far fa-file-excel"></i></button>
+                </form>
+
+            </div>
+            <div class="col-2 col-md-3 col-lg-3 text-right ">
                 <label>&nbsp;</label>
                 <form action="{{route('posts.create')}}" method="GET">
                     <!--

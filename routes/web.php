@@ -29,6 +29,7 @@ Route::get('/',[DashController::class, 'index'])->name('dashboard');
 Route::resource('/posts',PostController::class);
 
 Route::get('/search/', [PostController::class, 'search'])->middleware(['auth', 'verified'])->name('search');
+Route::get('/export/', [PostController::class, 'exportPost'])->middleware(['auth', 'verified'])->name('export');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
