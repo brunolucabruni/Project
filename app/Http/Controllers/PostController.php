@@ -23,7 +23,9 @@ class PostController extends Controller
 
     public function exportPost(Request $request){
 
-        return Excel::download(new ExportPost, 'presenze.xlsx');
+        //dd($request->input('start_date'));
+        //return Excel::download(new ExportPost, 'presenze.xlsx');
+        return (new ExportPost($request->input('start_date'),$request->input('stop_date')))->download('presenze.xlsx');
 
     }
 

@@ -50,6 +50,9 @@ Una volta effettuato l'accesso sarà possibile visionare lo storico degli ingres
 
 - **[VS Code](https://code.visualstudio.com/Download)**
 - **[GitHub Desktop](https://desktop.github.com/)**
+
+### Librerie esterne
+
 - **[maatwebsite/excel](https://laravel-excel.com/)**
 
 ### Riferimenti

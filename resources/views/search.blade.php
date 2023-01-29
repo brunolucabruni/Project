@@ -33,6 +33,8 @@
                     {{ csrf_field() }}
                     {{ method_field('GET') }}
                     -->
+                    <input type="hidden" id="start_date" name="start_date" value="@if (isset($_GET['start']))<?=$_GET['start']?>@else{{old('data', Carbon\Carbon::today()->format('Y-m-d'))}}@endif" />
+                    <input type="hidden" id="stop_date" name="stop_date" value="@if (isset($_GET['stop']))<?=$_GET['stop']?>@else{{old('data', Carbon\Carbon::today()->format('Y-m-d'))}}@endif" />
                     <button class="btn btn-warning"><i class="far fa-file-excel"></i></button>
                 </form>
 
