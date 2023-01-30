@@ -15,7 +15,8 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('search')" :active="request()->routeIs('search')">
+                    <?php $now=date('Y-m-d'); ?>
+                    <x-nav-link :href="route('search', ['start'=> $now,'stop'=> $now])" :active="request()->routeIs('search')">
                         {{ __('Presenze') }}
                     </x-nav-link>
                 </div>
